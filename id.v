@@ -3,7 +3,7 @@
 module id(
     // from if_id
     input [15:0] inst_i,
-    input [3:0] inst_addr_i,
+    input [6:0] inst_addr_i,
     
     // to regs
     output reg[2:0] rs1_addr_o,
@@ -15,7 +15,7 @@ module id(
     
     // to id_ex
     output reg[15:0] inst_o,
-    output reg[3:0] inst_addr_o,
+    output reg[6:0] inst_addr_o,
     output reg[15:0] op1_o,
     output reg[15:0] op2_o,
     output reg[2:0] rd_addr_o,

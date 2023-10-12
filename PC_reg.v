@@ -28,16 +28,16 @@ module PC_reg(
     input wire jump_en,
     input wire [5:0] jump_offset,
     
-    output reg[3:0] pc_o
+    output reg[6:0] pc_o
     );
     
     always @(posedge clk) begin
         if (rst == 1 'b0) begin
-            pc_o <= 4 'b0;
+            pc_o <= 7 'b0;
         end else if (jump_en) begin
-            pc_o <= pc_o - jump_offset[3:0] - 2;
+            pc_o <= pc_o - {1'b0,jump_offset[5:0]} - 7'd2;
         end else begin
-            pc_o <= pc_o + 4 'd1;
+            pc_o <= pc_o + 7 'd1;
         end
     end
 endmodule

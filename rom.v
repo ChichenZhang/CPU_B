@@ -2,11 +2,11 @@
 
 
 module rom(
-    input [3:0] addr_i,
+    input [6:0] addr_i,
     output reg[15:0] inst_o
 );
 
-    reg [15:0] memo[15:0];
+    reg [15:0] memo[127:0];
     
     initial begin
     

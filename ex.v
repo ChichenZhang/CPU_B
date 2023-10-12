@@ -2,7 +2,7 @@
 
 module ex(
     input [15:0] inst_i,
-    input [3:0] inst_addr_i,
+    input [6:0] inst_addr_i,
     input [15:0] op1_i,
     input [15:0] op2_i,
     input [2:0] rd_addr_i,

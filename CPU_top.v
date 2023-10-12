@@ -13,7 +13,7 @@ module CPU_top(
     input rst_n,
     
     input [15:0] inst_i,
-    output [3:0] inst_addr_o
+    output [6:0] inst_addr_o
 );
     
     // pc to if
@@ -35,7 +35,7 @@ module CPU_top(
 );
     
     //if to id
-    wire [3:0] if_inst_addr_o;
+    wire [6:0] if_inst_addr_o;
     wire [15:0] if_inst_o;
     
     // Instantiate the ifetch module
@@ -57,7 +57,7 @@ module CPU_top(
 );
     
     // if_id to id
-    wire [3:0] if_id_inst_addr_o;
+    wire [6:0] if_id_inst_addr_o;
     wire [15:0] if_id_inst_o;
     
     (* DONT_TOUCH= "{ture|yes}" *)
@@ -79,7 +79,7 @@ module CPU_top(
     
     // id to id_ex
     wire [15:0] id_ex_inst_o;
-    wire [3:0] id_ex_inst_addr_o;
+    wire [6:0] id_ex_inst_addr_o;
     wire [15:0] id_ex_op1_o;
     wire [15:0] id_ex_op2_o;
     wire [15:0] id_ex_rd_addr_o;
@@ -139,7 +139,7 @@ module CPU_top(
 
     // id_ex to ex
     wire [15:0] id_ex_ex_inst_o;
-    wire [3:0] id_ex_ex_inst_addr_o;
+    wire [6:0] id_ex_ex_inst_addr_o;
     wire [15:0] id_ex_ex_op1_o;
     wire [15:0] id_ex_ex_op2_o;
     wire [15:0] id_ex_ex_rd_addr_o;
